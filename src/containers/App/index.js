@@ -32,7 +32,7 @@ class App extends Component {
         this.props.movieAddModalOpen()
     }
 
-    handleMovieLoad = (index, size) => () => {
+    handleMovieLoad = (index, size) => {
         if (this.totalMovies + size <= top100IMDBMovies.length) {
             const ids = top100IMDBMovies.splice(index, size)
             this.props.getMoviesById(ids)
@@ -73,7 +73,7 @@ class App extends Component {
                             width="150px"
                             style={{ alignSelf: "center", marginTop: "50px" }}
                             title="Load more"
-                            onClick={this.handleMovieLoad(this.totalMovies, 1)}
+                            onClick={() => this.handleMovieLoad(this.totalMovies, 1)}
                         />
                     )}
             </AppContainer>

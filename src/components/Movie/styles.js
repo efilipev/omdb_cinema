@@ -4,9 +4,8 @@ export const Movie = styled.div`
     width: 100%;
     max-width: 420px;
     height: 100%;
-    max-height: 260px;
+    max-height: 275px;
     display: flex;
-    margin: 2vh auto;
     border-radius: 8px;
     position: relative;
 `
@@ -18,6 +17,7 @@ export const PosterImage = styled.img`
 `
 
 export const PosterContainer = styled.div`
+    display: flex;
     width: 180px;
 `
 
