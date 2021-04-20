@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/omdb-cinema.iml" filepath="$PROJECT_DIR$/omdb-cinema.iml" />
+      <module fileurl="file://$PROJECT_DIR$/omdb_cinema.iml" filepath="$PROJECT_DIR$/omdb_cinema.iml" />
     </modules>
   </component>
 </project>

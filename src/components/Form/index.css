@@ -1,0 +1,17 @@
+.field-item {
+    width: 100%;
+    position: relative;
+    height: 34px;
+    padding: 0 16px;
+    border: 2px solid #dddddd;
+    border-radius: 4px;
+    font-family: 'Rubik', sans-serif;
+    outline: 0;
+    transition: .2s;
+    margin-bottom: 8px;
+    box-sizing: border-box;
+}
+
+.field-item:focus {
+    border-color: #3c99f1;
+}
