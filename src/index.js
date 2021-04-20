@@ -3,12 +3,12 @@ import { store } from "./store"
 import ReactDOM from "react-dom"
 import App from "./containers/App"
 import { Provider } from "react-redux"
-import { SnackbarProvider } from "notistack"
+import SnackbarProvider from "react-simple-snackbar"
 
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={store}>
-            <SnackbarProvider maxSnack={3}>
+            <SnackbarProvider>
                 <App />
             </SnackbarProvider>
         </Provider>

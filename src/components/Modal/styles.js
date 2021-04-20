@@ -19,7 +19,7 @@ export const ModalCloseContainer = styled.div`
     width: 100%;
     display: flex;
     cursor: pointer;
-`;
+`
 
 export const ModalMainContent = styled.div`
     display: flex;
@@ -29,13 +29,13 @@ export const ModalMainContent = styled.div`
     alight-items: center;
 `
 export const ModalCloseButton = styled.div`
-    width: 35%;
+    width: 37%;
     margin-left: auto;
     margin-top: auto;
-`;
+`
 
 export const ModalCloseImg = styled.img`
     display: block;
     width: 35px;
-    height: 35px
+    height: 35px;
 `

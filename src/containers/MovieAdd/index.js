@@ -1,8 +1,9 @@
 import React from "react"
 import { connect } from "react-redux"
-import { withSnackbar } from "notistack"
+import { snackOptions } from "./styles"
 import { bindActionCreators } from "redux"
 import { movieTitleFilter } from "../../utils"
+import { withSnackbar } from "react-simple-snackbar"
 import MovieAddComponent from "../../components/MovieAdd"
 import { addMovie, addMoviePoster, movieAddModalClose } from "../../actions"
 
@@ -10,7 +11,7 @@ const MovieAddContainer = (props) => {
     const {
         movies,
         addMovie,
-        enqueueSnackbar,
+        openSnackbar,
         addMovieModal,
         addMoviePoster,
         movieAddModalClose,
@@ -27,13 +28,7 @@ const MovieAddContainer = (props) => {
                 addMovie(values)
                 movieAddModalClose()
             } else {
-                enqueueSnackbar("Such movie already exist!", {
-                    variant: "error",
-                    anchorOrigin: {
-                        vertical: "top",
-                        horizontal: "center",
-                    },
-                })
+                openSnackbar("Such movie already exist")
             }
         }
     }
@@ -68,5 +63,6 @@ export default withSnackbar(
             ...state.modalReducer,
         }),
         mapDispatchToProps
-    )(MovieAddContainer)
+    )(MovieAddContainer),
+    snackOptions
 )
