@@ -39,6 +39,7 @@ export const DescriptionButtons = styled.div`
     position: relative;
     width: 30%;
     justify-content: space-between;
+    align-items: flex-start;
 `
 
 export const IconButton = styled.div`

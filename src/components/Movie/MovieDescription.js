@@ -8,6 +8,7 @@ import {
 import React from "react"
 import edit from "../../assets/edit.svg"
 import trash from "../../assets/trash.svg"
+import { normalizeMovieTitle } from "../../utils"
 
 const MovieDescription = (props) => {
     const { movie, handleEditModal, handleDeleteModal } = props
@@ -15,7 +16,7 @@ const MovieDescription = (props) => {
         <DescriptionContainer>
             <DescriptionItems>
                 <h1 className="movie-title" style={{ marginTop: "auto" }}>
-                    {movie.Title}
+                    {normalizeMovieTitle(movie.Title)}
                 </h1>
                 <span>Year: {movie.Year}</span>
                 <span>Runtime: {movie.Runtime}</span>
