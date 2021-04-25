@@ -8,6 +8,5 @@ export const MovieGridContainer = styled.div`
     align-items: center;
     font-family: Roboto Helvetica Arial sans-serif;
     font-weight: 300;
-    line-height: 1.5em;
-    font-size: 1.11rem;
+    font-size: 1.05rem;
 `;

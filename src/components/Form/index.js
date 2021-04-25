@@ -1,7 +1,5 @@
-import "./index.css"
 import React from "react"
-import { Form, Formik } from "formik"
-import { FormContent } from "./styles"
+import { Formik } from "formik"
 
 const FormComponent = (props) => {
     const { submit, initialValues, validationSchema, ...other } = props
@@ -12,18 +10,7 @@ const FormComponent = (props) => {
             onSubmit={submit}
             {...other}
         >
-            {({ errors, touched }) => (
-                <Form>
-                    <FormContent>
-                        {React.Children.toArray(props.children).map((child) => {
-                            return React.cloneElement(child, {
-                                errors: { ...errors },
-                                touched: { ...touched },
-                            })
-                        })}
-                    </FormContent>
-                </Form>
-            )}
+            {props.children}
         </Formik>
     )
 }

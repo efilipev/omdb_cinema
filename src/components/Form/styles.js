@@ -63,3 +63,28 @@ export const StyledFileField = styled.input`
         border-color: #3c99f1;
     }
 `
+
+const styles = `
+    width: 250px;
+    position: relative;
+    height: 34px;
+    padding: 0 16px;
+    border: 2px solid #dddddd;
+    border-radius: 4px;
+    font-family: 'Rubik', sans-serif;
+    outline: 0;
+    transition: .2s;
+    margin-bottom: 8px;
+    box-sizing: border-box;
+    &:focus {
+        border-color: #3c99f1;
+    }
+`
+
+export const StyledInput = styled.input`
+   ${styles}
+`
+
+export const StyledSelect = styled.select`
+   ${styles}
+`

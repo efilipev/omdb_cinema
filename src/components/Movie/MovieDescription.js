@@ -3,7 +3,9 @@ import {
     IconButtonImg,
     DescriptionItems,
     DescriptionButtons,
+    DescriptionContent,
     DescriptionContainer,
+    DescriptionItemTitle,
 } from "./styles"
 import React from "react"
 import edit from "../../assets/edit.svg"
@@ -15,13 +17,15 @@ const MovieDescription = (props) => {
     return (
         <DescriptionContainer>
             <DescriptionItems>
-                <h1 className="movie-title" style={{ marginTop: "auto" }}>
+                <DescriptionItemTitle>
                     {normalizeMovieTitle(movie.Title)}
-                </h1>
-                <span>Year: {movie.Year}</span>
-                <span>Runtime: {movie.Runtime}</span>
-                <span>Genre: {movie.Genre}</span>
-                <span>Director: {movie.Director}</span>
+                </DescriptionItemTitle>
+                <DescriptionContent>
+                    <span>{`Year: ${movie.Year}`}</span>
+                    <span>{`Runtime: ${movie.Runtime}`}</span>
+                    <span>{`Genre: ${movie.Genre}`}</span>
+                    <span>{`Director: ${movie.Director}`}</span>
+                </DescriptionContent>
             </DescriptionItems>
             <DescriptionButtons>
                 <IconButton onClick={() => handleEditModal(movie)}>

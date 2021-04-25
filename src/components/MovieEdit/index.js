@@ -1,10 +1,12 @@
 import React from "react"
 import Modal from "../Modal"
+import Input from "../Input"
+import Select from "../Select"
 import FormComponent from "../Form"
+import { Field, Form } from "formik"
 import ButtonComponent from "../Button"
 import { genres, years } from "../../utils"
-import InputField from "../Form/InputField"
-import SelectField from "../Form/SelectField"
+import { FormContent } from "../Form/styles"
 import { MovieEditValidationSchema } from "./validation"
 
 const MovieEditComponent = (props) => {
@@ -20,12 +22,50 @@ const MovieEditComponent = (props) => {
                 validationSchema={MovieEditValidationSchema}
                 submit={submitForm}
             >
-                <InputField name="Title" label="Title" />
-                <SelectField name="Year" label="Year" options={years} />
-                <InputField name="Runtime" label="Runtime" />
-                <SelectField name="Genre" label="Genre" options={genres} />
-                <InputField name="Director" label="Director" />
-                <ButtonComponent type="submit" primary title="Submit" />
+                {({ errors, touched }) => (
+                    <Form>
+                        <FormContent>
+                            <Field
+                                name="Title"
+                                label="Title"
+                                component={Input}
+                                errors={errors}
+                                touched={touched}
+                            />
+                            <Field
+                                as="select"
+                                name="Year"
+                                label="Year"
+                                component={Select}
+                                options={years}
+                                hiddenTitle="Select a year"
+                            />
+                            <Field
+                                name="Runtime"
+                                label="Runtime"
+                                component={Input}
+                                errors={errors}
+                                touched={touched}
+                            />
+                            <Field
+                                as="select"
+                                name="Genre"
+                                label="Genre"
+                                component={Select}
+                                options={genres}
+                                hiddenTitle="Select Genre"
+                            />
+                            <Field
+                                name="Director"
+                                label="Director"
+                                component={Input}
+                                errors={errors}
+                                touched={touched}
+                            />
+                            <ButtonComponent type="submit" primary title="Submit" />
+                        </FormContent>
+                    </Form>
+                )}
             </FormComponent>
         </Modal>
     )

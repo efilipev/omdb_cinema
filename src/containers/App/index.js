@@ -1,11 +1,11 @@
 import { connect } from "react-redux"
-import { AppContainer } from "./styles"
 import React, { Component } from "react"
 import { bindActionCreators } from "redux"
 import { HTTPApi } from "../../api/http-api"
 import MovieContainer from "../../containers/Movie"
+import LoaderComponent from "../../components/Loader"
 import ButtonComponent from "../../components/Button"
-import ThreeDotsLoader from "../../components/Loader"
+import { AppContainer, ButtonWrapper } from "./styles"
 import MovieAddContainer from "../../containers/MovieAdd"
 import MovieEditContainer from "../../containers/MovieEdit"
 import MovieDeleteContainer from "../../containers/MovieDelete"
@@ -42,7 +42,15 @@ class App extends Component {
 
     render() {
         if (!Object.keys(this.props.movies).length) {
-            return <ThreeDotsLoader />
+            return (
+                <LoaderComponent
+                    ch="100vh"
+                    type="Oval"
+                    color="#008BC9"
+                    height={60}
+                    width={60}
+                />
+            )
         }
         if (this.props.addMovieModal) {
             return <MovieAddContainer />
@@ -60,21 +68,26 @@ class App extends Component {
 
         return (
             <AppContainer>
-                <ButtonComponent
-                    title="Add movie"
-                    width="150px"
-                    style={{ marginLeft: "auto" }}
-                    onClick={this.handleMovieAdd}
-                />
+                <ButtonWrapper ml="auto">
+                    <ButtonComponent
+                        width="150px"
+                        title="Add movie"
+                        onClick={this.handleMovieAdd}
+                    />
+                </ButtonWrapper>
                 <MovieContainer movies={this.props.movies} />
                 {Object.keys(this.props.movies).length > 0 &&
                     this.totalMovies <= top100IMDBMovies.length && (
-                        <ButtonComponent
-                            width="150px"
-                            style={{ alignSelf: "center", marginTop: "50px" }}
-                            title="Load more"
-                            onClick={() => this.handleMovieLoad(this.totalMovies, 1)}
-                        />
+                        <ButtonWrapper mt="30px" alignSelf="center">
+                            <ButtonComponent
+                                loading={this.props.isFetching}
+                                width="150px"
+                                title="Load more"
+                                onClick={() =>
+                                    this.handleMovieLoad(this.totalMovies, 1)
+                                }
+                            />
+                        </ButtonWrapper>
                     )}
             </AppContainer>
         )

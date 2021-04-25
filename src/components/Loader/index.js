@@ -1,11 +1,13 @@
 import React from "react"
-import Loader from "react-loader-spinner";
+import Loader from "react-loader-spinner"
 import { LoaderContainer } from "./styles"
 
-const ThreeDotsLoader = props => {
-    return <LoaderContainer>
-        <Loader type="ThreeDots" color="#008BC9" height={80} width={80} />
-    </LoaderContainer>
+const LoaderComponent = (props) => {
+    return (
+        <LoaderContainer height={props.ch}>
+            <Loader {...props} />
+        </LoaderContainer>
+    )
 }
 
-export default ThreeDotsLoader
+export default LoaderComponent
