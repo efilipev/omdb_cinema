@@ -6,9 +6,9 @@ const MovieListComponent = (props) => {
     const { movies, handleEditModal, handleDeleteModal } = props
     return Object.keys(props.movies).length ? (
         <Fragment>
-            {movies.map((movie, index) => (
+            {movies.map((movie) => (
                 <MovieComponent
-                    key={`${movie.Title}_${index}`}
+                    key={`${movie.imdbID}`}
                     movie={movie}
                     handleEditModal={handleEditModal}
                     handleDeleteModal={handleDeleteModal}
