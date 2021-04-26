@@ -1,2 +1,2 @@
-export * from "./movie-actions";
-export * from "./modal-actions";
+export * from './movie-actions';
+export * from './modal-actions';

@@ -1,3 +1,3 @@
-export * from "./movieType";
-export * from "./modalType";
-export * from "./alertType";
+export * from './movieType';
+export * from './modalType';
+export * from './alertType';
