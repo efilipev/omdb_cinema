@@ -8,8 +8,8 @@ const MovieListComponent = (props) => {
     <Fragment>
       {movies.map((movie) => (
         <MovieComponent
-          key={`${movie.imdbID}`}
           movie={movie}
+          key={movie.imdbID}
           handleEditModal={handleEditModal}
           handleDeleteModal={handleDeleteModal}
         />
